@@ -1,0 +1,1 @@
+docker build -t isl_mc_rtc .

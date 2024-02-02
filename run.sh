@@ -1,0 +1,1 @@
+irsl_docker_irsl_system/run.sh --image isl_mc_rtc --workspace `pwd`/userdir --no-gpu

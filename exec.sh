@@ -1,0 +1,1 @@
+docker exec -it docker_irsl_system /bin/bash
