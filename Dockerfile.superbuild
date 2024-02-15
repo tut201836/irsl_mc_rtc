@@ -37,13 +37,10 @@ RUN --mount=type=ssh \
     mkdir -p build && cd build && \
     DEBIAN_FRONTEND=noninteractive cmake ../ -DSOURCE_DESTINATION=/mc_rtc_ws/src/ -DBUILD_DESTINATION=/mc_rtc_ws/build -DCMAKE_INSTALL_PREFIX=/mc_rtc_ws/install -DCMAKE_BUILD_TYPE=RelWithDebInfo  && \
     git config --global user.name "GitHub Actions" && git config --global user.email "irsl@docker.com" && \
-    cmake --build . --config RelWithDebInfo --target clone' && \
+    cmake --build . --config RelWithDebInfo --target clone && \
+    cmake --build . --config RelWithDebInfo' && \
     apt clean && \
     rm -rf /var/lib/apt/lists/
-
-
-    # cmake --build . --config RelWithDebInfo' && \
-
 
 
 # RUN mkdir -p /mc_rtc_ws && cd /mc_rtc_ws && \
@@ -61,13 +58,13 @@ RUN --mount=type=ssh \
 #     apt clean && \
 #     rm -rf /var/lib/apt/lists/
 
-# RUN echo 'export PATH=/usr/local/bin:$PATH' >> ~/.bashrc && \
-#     echo 'export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH' >> ~/.bashrc && \
-#     echo 'export LD_LIBRARY_PATH=/mc_rtc_ws/install/lib:$LD_LIBRARY_PATH' >> ~/.bashrc && \
-#     echo 'export PYTHONPATH=/usr/local/lib/python3.8/dist-packages:$PYTHONPATH' >> ~/.bashrc && \
-#     echo 'export ROS_PARALLEL_JOBS="-j8 -l8"' >> ~/.bashrc && \
-#     echo 'source /opt/ros/${ROS_DISTRO}/setup.bash' >> ~/.bashrc && \
-#     echo "source /mc_rtc_ws/src/catkin_ws/devel/setup.bash" >> ~/.bashrc
+RUN echo 'export PATH=/usr/local/bin:$PATH' >> ~/.bashrc && \
+    echo 'export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH' >> ~/.bashrc && \
+    echo 'export LD_LIBRARY_PATH=/mc_rtc_ws/install/lib:$LD_LIBRARY_PATH' >> ~/.bashrc && \
+    echo 'export PYTHONPATH=/usr/local/lib/python3.8/dist-packages:$PYTHONPATH' >> ~/.bashrc && \
+    echo 'export ROS_PARALLEL_JOBS="-j8 -l8"' >> ~/.bashrc && \
+    echo 'source /opt/ros/${ROS_DISTRO}/setup.bash' >> ~/.bashrc && \
+    echo "source /mc_rtc_ws/src/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
 # COPY superbuild_extensions /mc_rtc_ws/mc-rtc-superbuild/extensions/
 # RUN apt update -q -qq && \
