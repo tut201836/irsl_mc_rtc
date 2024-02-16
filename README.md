@@ -2,7 +2,7 @@
 
 ## build
 ```
-./build.sh
+SSH_AUTH_SOCK=<github's ssh key file> ./build.sh
 ```
 
 ## run
@@ -14,16 +14,13 @@ roscore
 ## exec
 ```
 ./exec.sh
-source /mc_rtc_ws/src/catkin_ws/devel/setup.bash
 roslauch mc_rtc_ticker display.launch
 ```
 
 ## exec
 ```
 ./exec.sh
-source /mc_rtc_ws/src/catkin_ws/devel/setup.bash
-cd /usr/share/hrpsys/samples/JVRC1
-choreonoid sim_mc.cnoid
+roslaunch choreonoid_ros choreonoid.launch choreonoid_arg:="/mc_rtc_ws/install/share/hrpsys/samples/CHIDORI/sim_mc.cnoid"
 ```
 
 ## START Walking and Walking by twist topic
