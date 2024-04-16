@@ -1,8 +1,3 @@
-# set(mc_openrtm_DEPENDS mc_rtc choreonoid)
-# if(TARGET hrp5p-iob)
-#   list(APPEND mc_openrtm_DEPENDS hrp5p-iob)
-# endif()
-
 AddProject(mc_openrtm
   GITHUB jrl-umi3218/mc_openrtm
   GIT_TAG origin/master
