@@ -50,6 +50,7 @@ docker run \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --name=${cname} \
     --volume="${mtdir}:/userdir" \
+    --volume="${pwd}/root:/root" \
     -w="/userdir" \
     ${iname} \
     ${VAR}

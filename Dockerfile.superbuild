@@ -64,3 +64,4 @@ RUN echo 'export PATH=/workspace/install/bin:$PATH' >> ~/.bashrc && \
     echo 'source /opt/ros/${ROS_DISTRO}/setup.bash' >> ~/.bashrc && \
     echo "source /workspace/src/catkin_ws/devel/setup.bash" >> ~/.bashrc
     
+    

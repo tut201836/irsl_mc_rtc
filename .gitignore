@@ -1,3 +1,6 @@
 userdir/*
 !userdir/.gitkeep
 tmp
+
+root/*
+!root/.gitkeep
