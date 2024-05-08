@@ -1,13 +1,14 @@
-# choreonoid_test_env
+# irsl_mc_rtc
 
 ## build
 ```
-SSH_AUTH_SOCK=<github's ssh key file> ./build.sh
+./build.sh -u <GITLAB name> -e <GITLAB email> -k <GITLAB SSH PUBKEY>
+./build_source.sh --init
 ```
 
 ## run
 ```
-./run.sh
+ROBOT=<CHIDORI or JVRC1> ./run.sh
 roscore
 ```
 
@@ -20,7 +21,8 @@ roslauch mc_rtc_ticker display.launch
 ## exec
 ```
 ./exec.sh
-roslaunch choreonoid_ros choreonoid.launch choreonoid_arg:="/mc_rtc_ws/install/share/hrpsys/samples/CHIDORI/sim_mc.cnoid"
+./clear-omninames.sh
+choreonoid sim_mc.cnoid --start-simulation
 ```
 
 ## START Walking and Walking by twist topic

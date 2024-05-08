@@ -29,8 +29,13 @@ while [[ $# -gt 0 ]]; do
             shift
             shift
             ;;
+        -k|--key)
+            GIT_SSHKEY="$2"
+            shift
+            shift
+            ;;
         --help)
-            echo "build.sh [--user GIT_USERNAME][--email GIT_EMAIL]"
+            echo "build.sh [--user GIT_USERNAME][--email GIT_EMAIL][--key GIT_SSHKEY]"
             exit 0
             ;;
         --)

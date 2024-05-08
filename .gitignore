@@ -4,3 +4,20 @@ tmp
 
 root/*
 !root/.gitkeep
+!root/.bashrc
+!root/catkin_ws
+root/catkin_ws/build
+root/catkin_ws/devel
+root/catkin_ws/.catkin_tools
+root/catkin_ws/logs
+root/catkin_ws/src
+!root/catkin_ws/.gitkeep
+!root/config_JVRC1
+root/config_JVRC1/mc_rtc
+root/config_JVRC1/Choreonoid
+root/config_JVRC1/catkin
+!root/config_JVRC1/.gitkeep
+!root/config_CHIDORI
+root/config_CHIDORI/mc_rtc
+root/config_CHIDORI/Choreonoid
+root/config_CHIDORI/catkin

@@ -3,6 +3,10 @@ ARG BASE_IMAGE=ros:noetic-ros-base-focal
 FROM ${BASE_IMAGE}
 ARG CATKIN_SETUP_FILE
 
+### speedup download
+# https://genzouw.com/entry/2019/09/04/085135/1718/
+RUN sed -i 's@archive.ubuntu.com@ftp.jaist.ac.jp/pub/Linux@g' /etc/apt/sources.list
+
 WORKDIR /
 RUN apt update -q -qq && \
     apt install -y git build-essential  python3-catkin-tools && \
@@ -19,14 +23,14 @@ RUN apt update -q -qq && \
     rm -rf /var/lib/apt/lists/
 RUN mkdir -p ~/.ssh && \
     ssh-keyscan github.com >> ~/.ssh/known_hosts
-# RUN --mount=type=ssh \
-#     git clone git@github.com:IRSL-tut/chidori-superbuild.git /workspace/mc-rtc-superbuild/extensions/chidori-superbuild
-# RUN echo "set(CHIDORI_DIR \${CMAKE_CURRENT_LIST_DIR}/chidori-superbuild)" >>  /workspace/mc-rtc-superbuild/extensions/local.cmake && \
-#     echo "include(\${CHIDORI_DIR}/chidori.cmake)" >>  /workspace/mc-rtc-superbuild/extensions/local.cmake
+RUN --mount=type=ssh \
+    git clone git@github.com:IRSL-tut/chidori-superbuild.git /workspace/mc-rtc-superbuild/extensions/chidori-superbuild
+RUN echo "set(CHIDORI_DIR \${CMAKE_CURRENT_LIST_DIR}/chidori-superbuild)" >>  /workspace/mc-rtc-superbuild/extensions/local.cmake && \
+    echo "include(\${CHIDORI_DIR}/chidori.cmake)" >>  /workspace/mc-rtc-superbuild/extensions/local.cmake
 
 # HOTFIX
-# RUN sed -i.bk 's/DEPENDS CHIDORI choreonoid/DEPENDS CHIDORI/g' /workspace/mc-rtc-superbuild/extensions/chidori-superbuild/chidori.cmake
-# RUN echo "include(local.cmake)" >> /workspace/mc-rtc-superbuild/extensions/CMakeLists.txt
+RUN sed -i.bk 's/DEPENDS CHIDORI choreonoid/DEPENDS CHIDORI/g' /workspace/mc-rtc-superbuild/extensions/chidori-superbuild/chidori.cmake
+RUN echo "include(local.cmake)" >> /workspace/mc-rtc-superbuild/extensions/CMakeLists.txt
 
 RUN --mount=type=ssh \
     apt update -q -qq && \
@@ -64,4 +68,8 @@ RUN echo 'export PATH=/workspace/install/bin:$PATH' >> ~/.bashrc && \
     echo 'source /opt/ros/${ROS_DISTRO}/setup.bash' >> ~/.bashrc && \
     echo "source /workspace/src/catkin_ws/devel/setup.bash" >> ~/.bashrc
     
-    
+RUN apt update -q -qq && \
+    apt install -y ros-noetic-qt-gui ros-noetic-rqt-gui ros-noetic-rqt-gui-py  ros-noetic-rqt-py-common ros-noetic-rqt-service-caller ros-noetic-sbpl && \
+    apt clean && \
+    rm -rf /var/lib/apt/lists/
+RUN echo "source /root/catkin_ws/devel/setup.bash" >> ${HOME}/.bashrc

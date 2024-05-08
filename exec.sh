@@ -1,1 +1,1 @@
-docker exec -it docker_irsl_system /bin/bash
+docker exec -it irsl_mc_rtc /bin/bash

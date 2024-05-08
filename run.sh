@@ -5,6 +5,7 @@ cname=${DOCKER_CONTAINER:-"irsl_mc_rtc"} ## name of container (should be same as
 
 DEFAULT_USER_DIR="$(pwd)"
 mtdir=${MOUNTED_DIR:-$DEFAULT_USER_DIR}
+robot=${ROBOT:-"JVRC1"} # JVRC1 or CHIDORI
 
 
 VAR=${@:-"bash"}
@@ -38,6 +39,14 @@ xhost +si:localuser:root
 
 rmimage=$(docker rm ${cname})
 
+
+if [ $robot = "JVRC1" ]; then
+    MC_CONTROL_CONFIG_MOUNT="-v `pwd`/config/JVRC1/mc_rtc.yaml:/root/.config/mc_rtc/mc_rtc.yaml"
+elif [ $robot = "CHIDORI" ]; then
+    MC_CONTROL_CONFIG_MOUNT="-v `pwd`/config/CHIDORI/mc_rtc.yaml:/root/.config/mc_rtc/mc_rtc.yaml \
+                            -v `pwd`/config/CHIDORI/BaselineWalkingController.yaml:/root/catkin_ws/devel/lib/mc_controller/etc/BaselineWalkingController.yaml"
+fi
+
 docker run \
     --privileged     \
     ${OPT}           \
@@ -50,8 +59,9 @@ docker run \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --name=${cname} \
     --volume="${mtdir}:/userdir" \
-    --volume="${pwd}/root:/root" \
-    -w="/userdir" \
+    -v `pwd`/root:/root \
+    $MC_CONTROL_CONFIG_MOUNT \
+    -w="/workspace/install/share/hrpsys/samples/${robot}" \
     ${iname} \
     ${VAR}
 
