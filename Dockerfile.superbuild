@@ -18,8 +18,10 @@ RUN apt update -q -qq && \
 RUN mkdir -p /workspace && cd /workspace && \
     git clone https://github.com/mc-rtc/mc-rtc-superbuild.git
 
-# CHIDORI用ファイルのクローン
+# extension用ファイルの追加
 COPY superbuild_extensions /workspace/mc-rtc-superbuild/extensions/
+
+# CHIDORI用ファイルのクローン
 RUN apt update -q -qq && \
     apt install -y openssh-client && \
     apt clean && \
