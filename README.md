@@ -15,7 +15,7 @@ roscore
 ## exec
 ```
 ./exec.sh
-roslauch mc_rtc_ticker display.launch
+roslaunch mc_rtc_ticker display.launch
 ```
 
 ## exec
