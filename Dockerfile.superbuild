@@ -7,15 +7,18 @@ ARG CATKIN_SETUP_FILE
 # https://genzouw.com/entry/2019/09/04/085135/1718/
 RUN sed -i 's@archive.ubuntu.com@ftp.jaist.ac.jp/pub/Linux@g' /etc/apt/sources.list
 
+# 共通パッケージインストール
 WORKDIR /
 RUN apt update -q -qq && \
     apt install -y git build-essential  python3-catkin-tools && \
     apt clean && \
     rm -rf /var/lib/apt/lists/
 
+# mc_rtc本体のインストール
 RUN mkdir -p /workspace && cd /workspace && \
     git clone https://github.com/mc-rtc/mc-rtc-superbuild.git
 
+# CHIDORI用ファイルのクローン
 COPY superbuild_extensions /workspace/mc-rtc-superbuild/extensions/
 RUN apt update -q -qq && \
     apt install -y openssh-client && \
@@ -27,11 +30,10 @@ RUN --mount=type=ssh \
     git clone git@github.com:IRSL-tut/chidori-superbuild.git /workspace/mc-rtc-superbuild/extensions/chidori-superbuild
 RUN echo "set(CHIDORI_DIR \${CMAKE_CURRENT_LIST_DIR}/chidori-superbuild)" >>  /workspace/mc-rtc-superbuild/extensions/local.cmake && \
     echo "include(\${CHIDORI_DIR}/chidori.cmake)" >>  /workspace/mc-rtc-superbuild/extensions/local.cmake
-
-# HOTFIX
 RUN sed -i.bk 's/DEPENDS CHIDORI choreonoid/DEPENDS CHIDORI/g' /workspace/mc-rtc-superbuild/extensions/chidori-superbuild/chidori.cmake
 RUN echo "include(local.cmake)" >> /workspace/mc-rtc-superbuild/extensions/CMakeLists.txt
 
+# mc_rtcに必要なライブラリインストール(bootstraping)
 RUN --mount=type=ssh \
     apt update -q -qq && \
     bash -c 'source /opt/ros/noetic/setup.bash && \
@@ -40,6 +42,7 @@ RUN --mount=type=ssh \
     apt clean && \
     rm -rf /var/lib/apt/lists/
 
+# mc_rtcコンパイル
 RUN --mount=type=ssh \
     apt update -q -qq && \
     bash -c 'source /opt/ros/noetic/setup.bash && \
@@ -49,7 +52,6 @@ RUN --mount=type=ssh \
     git config --global user.name "GitHub Actions" && git config --global user.email "irsl@docker.com" '\
     apt clean && \
     rm -rf /var/lib/apt/lists/
-    
 RUN  --mount=type=ssh \
     apt update -q -qq && \
     bash -c 'source /opt/ros/noetic/setup.bash && \
@@ -59,7 +61,7 @@ RUN  --mount=type=ssh \
     apt clean && \
     rm -rf /var/lib/apt/lists/
    
-
+# bashrcへの追記(注：run.shで/rootをマウントしている場合はこのファイルを参照していない)
 RUN echo 'export PATH=/workspace/install/bin:$PATH' >> ~/.bashrc && \
     echo 'export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH' >> ~/.bashrc && \
     echo 'export LD_LIBRARY_PATH=/workspace/install/lib:$LD_LIBRARY_PATH' >> ~/.bashrc && \
@@ -67,7 +69,8 @@ RUN echo 'export PATH=/workspace/install/bin:$PATH' >> ~/.bashrc && \
     echo 'export ROS_PARALLEL_JOBS="-j8 -l8"' >> ~/.bashrc && \
     echo 'source /opt/ros/${ROS_DISTRO}/setup.bash' >> ~/.bashrc && \
     echo "source /workspace/src/catkin_ws/devel/setup.bash" >> ~/.bashrc
-    
+
+# BaselineWalkingControllerの必要ライブラリのインストール
 RUN apt update -q -qq && \
     apt install -y ros-noetic-qt-gui ros-noetic-rqt-gui ros-noetic-rqt-gui-py  ros-noetic-rqt-py-common ros-noetic-rqt-service-caller ros-noetic-sbpl && \
     apt clean && \
