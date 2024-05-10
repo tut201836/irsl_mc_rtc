@@ -3,7 +3,8 @@
 ## build
 ```
 ./build.sh -u <GITLAB name> -e <GITLAB email> -k <GITLAB SSH PUBKEY>
-./build_source.sh --init
+./build_controller.sh --init
+./build_controller.sh --build
 ```
 
 ## run
@@ -20,8 +21,7 @@ roslaunch mc_rtc_ticker display.launch
 
 ## exec
 ```
-./exec.sh
-./clear-omninames.sh
+./exec.sh -w /mc_rtc_ws/install/share/hrpsys/samples/<ROBOT NAME>
 choreonoid sim_mc.cnoid --start-simulation
 ```
 
