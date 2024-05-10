@@ -87,3 +87,8 @@ RUN apt update -q -qq && \
     apt clean && \
     rm -rf /var/lib/apt/lists/
 RUN echo "source /root/catkin_ws/devel/setup.bash" >> ${HOME}/.bashrc
+
+# entrypoint.shの追加
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
