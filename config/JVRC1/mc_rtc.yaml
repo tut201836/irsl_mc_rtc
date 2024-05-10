@@ -1,6 +1,6 @@
 MainRobot: JVRC1
 
 Enabled: BaselineWalkingController
-ControllerModulePaths: ["/root/catkin_ws/devel/.private/baseline_walking_controller/lib/mc_controller/"]
+ControllerModulePaths: ["/bwc_ws/devel/.private/baseline_walking_controller/lib/mc_controller/"]
 
 Timestep: 0.005

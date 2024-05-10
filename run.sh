@@ -2,76 +2,19 @@
 
 iname=${DOCKER_IMAGE:-"irsl_mc_rtc:ubuntu20.04"} ##
 cname=${DOCKER_CONTAINER:-"irsl_mc_rtc"} ## name of container (should be same as in exec.sh)
-
-DEFAULT_USER_DIR="$(pwd)"
-mtdir=${MOUNTED_DIR:-$DEFAULT_USER_DIR}
 robot=${ROBOT:-"JVRC1"} # JVRC1 or CHIDORI
-
-
-VAR=${@:-"bash"}
-if [ $# -eq 0 -a -z "$OPT" ]; then
-    OPT=-it
-fi
-
-if [ -z "$NO_GPU" ]; then
-    GPU_OPT='--gpus all,"capabilities=compute,graphics,utility,display"'
-else
-    GPU_OPT=""
-fi
-#echo "GPU_OPT: $GPU_OPT"
-
-## --net=mynetworkname
-## docker inspect -f '{{.NetworkSettings.Networks.mynetworkname.IPAddress}}' container_name
-## docker inspect -f '{{.NetworkSettings.Networks.mynetworkname.Gateway}}'   container_name
-
-NET_OPT="--net=host"
-# for gdb
-#NET_OPT="--net=host --env=DOCKER_ROS_IP --env=DOCKER_ROS_MASTER_URI --cap-add=SYS_PTRACE --security-opt=seccomp=unconfined"
-
-DOCKER_ENVIRONMENT_VAR=""
-
-if [ -n "$USE_USER" ]; then
-    USER_SETTING=" -u $(id -u):$(id -g) -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro"
-fi
-
-##xhost +local:root
-xhost +si:localuser:root
-
-rmimage=$(docker rm ${cname})
-
+MC_RTC_WORKSPCE=/mc_rtc_ws
 
 if [ $robot = "JVRC1" ]; then
-    MC_CONTROL_CONFIG_MOUNT="-v `pwd`/config/JVRC1/mc_rtc.yaml:/root/.config/mc_rtc/mc_rtc.yaml"
+    MC_CONTROL_CONFIG_MOUNT="--volume=`pwd`/config/JVRC1/mc_rtc.yaml:/root/.config/mc_rtc/mc_rtc.yaml"
 elif [ $robot = "CHIDORI" ]; then
-    MC_CONTROL_CONFIG_MOUNT="-v `pwd`/config/CHIDORI/mc_rtc.yaml:/root/.config/mc_rtc/mc_rtc.yaml \
-                            -v `pwd`/config/CHIDORI/BaselineWalkingController.yaml:/root/catkin_ws/devel/lib/mc_controller/etc/BaselineWalkingController.yaml"
+    MC_CONTROL_CONFIG_MOUNT="--volume=`pwd`/config/CHIDORI/mc_rtc.yaml:/root/.config/mc_rtc/mc_rtc.yaml"
 fi
+BWC_WORK_MOUNT="--volume=`pwd`/bwc_ws:/bwc_ws"
 
-docker run \
-    --privileged     \
-    ${OPT}           \
-    ${GPU_OPT}       \
-    ${NET_OPT}       \
-    ${USER_SETTING}  \
-    ${DOCKER_ENVIRONMENT_VAR} \
-    --env="DISPLAY"  \
-    --env="QT_X11_NO_MITSHM=1" \
-    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-    --name=${cname} \
-    --volume="${mtdir}:/userdir" \
-    -v `pwd`/root:/root \
-    $MC_CONTROL_CONFIG_MOUNT \
-    -w="/workspace/install/share/hrpsys/samples/${robot}" \
-    ${iname} \
-    ${VAR}
-
-##xhost -local:root
-
-## capabilities
-# compute	CUDA / OpenCL アプリケーション
-# compat32	32 ビットアプリケーション
-# graphics	OpenGL / Vulkan アプリケーション
-# utility	nvidia-smi コマンドおよび NVML
-# video		Video Codec SDK
-# display	X11 ディスプレイに出力
-# all
+.irsl_docker_irsl_system/run.sh \
+--image $iname \
+--name $cname \
+--mount ${MC_CONTROL_CONFIG_MOUNT} \
+--mount ${BWC_WORK_MOUNT} \
+--workspace "`pwd`/userdir"

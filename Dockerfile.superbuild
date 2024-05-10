@@ -2,6 +2,7 @@
 ARG BASE_IMAGE=ros:noetic-ros-base-focal
 FROM ${BASE_IMAGE}
 ARG CATKIN_SETUP_FILE
+ARG MC_RTC_WORKSPCE="/mc_rtc_ws"
 
 ### speedup download
 # https://genzouw.com/entry/2019/09/04/085135/1718/
@@ -15,7 +16,7 @@ RUN apt update -q -qq && \
     rm -rf /var/lib/apt/lists/
 
 # mc_rtc本体のクローン
-RUN mkdir -p /workspace && cd /workspace && \
+RUN mkdir -p ${MC_RTC_WORKSPCE} && cd ${MC_RTC_WORKSPCE} && \
     git clone https://github.com/mc-rtc/mc-rtc-superbuild.git
 
 # SSHを設定
@@ -28,25 +29,24 @@ RUN mkdir -p ~/.ssh && \
 
 # extension用ファイルの追加
 RUN --mount=type=ssh \
-    git clone --recursive git@github.com:IRSL-tut/superbuild-choreonoid.git  /workspace/mc-rtc-superbuild/extensions/superbuild-choreonoid-irsl
+    git clone --recursive git@github.com:IRSL-tut/superbuild-choreonoid.git  ${MC_RTC_WORKSPCE}/mc-rtc-superbuild/extensions/superbuild-choreonoid-irsl
 
 # CHIDORI用ファイルのクローン
 # local.cmakeはzzz_local.cmakeとしてアルファベット順で最後となるようにする．
 # 最後に読み込ませることで，依存関係を解消する
 ARG CMAKEFILENAME="zzz_local.cmake"
 RUN --mount=type=ssh \
-    git clone git@github.com:IRSL-tut/chidori-superbuild.git /workspace/mc-rtc-superbuild/extensions/chidori-superbuild
-RUN echo "set(CHIDORI_DIR \${CMAKE_CURRENT_LIST_DIR}/chidori-superbuild)" >>  /workspace/mc-rtc-superbuild/extensions/${CMAKEFILENAME} && \
-    echo "include(\${CHIDORI_DIR}/chidori.cmake)" >>  /workspace/mc-rtc-superbuild/extensions/${CMAKEFILENAME}
-# RUN sed -i.bk 's/DEPENDS CHIDORI choreonoid/DEPENDS CHIDORI/g' /workspace/mc-rtc-superbuild/extensions/chidori-superbuild/chidori.cmake
+    git clone git@github.com:IRSL-tut/chidori-superbuild.git ${MC_RTC_WORKSPCE}/mc-rtc-superbuild/extensions/chidori-superbuild
+RUN echo "set(CHIDORI_DIR \${CMAKE_CURRENT_LIST_DIR}/chidori-superbuild)" >>  ${MC_RTC_WORKSPCE}/mc-rtc-superbuild/extensions/${CMAKEFILENAME} && \
+    echo "include(\${CHIDORI_DIR}/chidori.cmake)" >>  ${MC_RTC_WORKSPCE}/mc-rtc-superbuild/extensions/${CMAKEFILENAME}
 # extensionsディレクトリ内のファイル読み込み順をアルファベット順にするためのHOTFIX
-RUN sed -i.bak '2i list(SORT extension_dirs)' /workspace/mc-rtc-superbuild/extensions/CMakeLists.txt 
+RUN sed -i.bak '2i list(SORT extension_dirs)' ${MC_RTC_WORKSPCE}/mc-rtc-superbuild/extensions/CMakeLists.txt 
 
 # mc_rtcに必要なライブラリインストール(bootstraping)
 RUN --mount=type=ssh \
     apt update -q -qq && \
     bash -c 'source /opt/ros/noetic/setup.bash && \
-    cd /workspace/mc-rtc-superbuild && \
+    cd ${MC_RTC_WORKSPCE}/mc-rtc-superbuild && \
     DEBIAN_FRONTEND=noninteractive ./utils/bootstrap-linux.sh ' \
     apt clean && \
     rm -rf /var/lib/apt/lists/
@@ -55,38 +55,39 @@ RUN --mount=type=ssh \
 RUN --mount=type=ssh \
     apt update -q -qq && \
     bash -c 'source /opt/ros/noetic/setup.bash && \
-    cd /workspace/mc-rtc-superbuild && \
+    cd ${MC_RTC_WORKSPCE}/mc-rtc-superbuild && \
     mkdir -p build && cd build && \
-    DEBIAN_FRONTEND=noninteractive cmake ../ -DSOURCE_DESTINATION=/workspace/src/ -DBUILD_DESTINATION=/workspace/build -DCMAKE_INSTALL_PREFIX=/workspace/install -DCMAKE_BUILD_TYPE=RelWithDebInfo  && \
+    DEBIAN_FRONTEND=noninteractive cmake ../ -DSOURCE_DESTINATION=${MC_RTC_WORKSPCE}/src/ -DBUILD_DESTINATION=${MC_RTC_WORKSPCE}/build -DCMAKE_INSTALL_PREFIX=${MC_RTC_WORKSPCE}/install -DCMAKE_BUILD_TYPE=RelWithDebInfo  && \
     git config --global user.name "GitHub Actions" && git config --global user.email "irsl@docker.com" '\
     apt clean && \
     rm -rf /var/lib/apt/lists/
 RUN --mount=type=ssh \
     apt update -q -qq && \
     bash -c 'source /opt/ros/noetic/setup.bash && \
-    cd /workspace/mc-rtc-superbuild/build && \ 
+    cd ${MC_RTC_WORKSPCE}/mc-rtc-superbuild/build && \ 
     DEBIAN_FRONTEND=noninteractive cmake --build . --config RelWithDebInfo --target clone' \
     apt clean && \
     rm -rf /var/lib/apt/lists/
 RUN bash -c 'source /opt/ros/noetic/setup.bash && \
-    cd /workspace/mc-rtc-superbuild/build && \ 
+    cd ${MC_RTC_WORKSPCE}/mc-rtc-superbuild/build && \ 
     cmake --build . --config RelWithDebInfo' 
    
 # bashrcへの追記(注：run.shで/rootをマウントしている場合はこのファイルを参照していない)
-RUN echo 'export PATH=/workspace/install/bin:$PATH' >> ~/.bashrc && \
+RUN echo "export MC_RTC_WORKSPCE=${MC_RTC_WORKSPCE}" >>  ~/.bashrc && \
+    echo 'export PATH=${MC_RTC_WORKSPCE}/install/bin:$PATH' >> ~/.bashrc && \
     echo 'export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH' >> ~/.bashrc && \
-    echo 'export LD_LIBRARY_PATH=/workspace/install/lib:$LD_LIBRARY_PATH' >> ~/.bashrc && \
+    echo 'export LD_LIBRARY_PATH=${MC_RTC_WORKSPCE}/install/lib:$LD_LIBRARY_PATH' >> ~/.bashrc && \
     echo 'export PYTHONPATH=/usr/local/lib/python3.8/dist-packages:$PYTHONPATH' >> ~/.bashrc && \
     echo 'export ROS_PARALLEL_JOBS="-j8 -l8"' >> ~/.bashrc && \
     echo 'source /opt/ros/${ROS_DISTRO}/setup.bash' >> ~/.bashrc && \
-    echo "source /workspace/src/catkin_ws/devel/setup.bash" >> ~/.bashrc
+    echo "source ${MC_RTC_WORKSPCE}/src/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
 # BaselineWalkingControllerの必要ライブラリのインストール
 RUN apt update -q -qq && \
     apt install -y ros-noetic-qt-gui ros-noetic-rqt-gui ros-noetic-rqt-gui-py  ros-noetic-rqt-py-common ros-noetic-rqt-service-caller ros-noetic-sbpl && \
     apt clean && \
     rm -rf /var/lib/apt/lists/
-RUN echo "source /root/catkin_ws/devel/setup.bash" >> ${HOME}/.bashrc
+RUN echo "source /bwc_ws/devel/setup.bash" >> ${HOME}/.bashrc
 
 # entrypoint.shの追加
 COPY entrypoint.sh /entrypoint.sh
