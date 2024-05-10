@@ -32,7 +32,7 @@ RUN --mount=type=ssh \
 
 # CHIDORI用ファイルのクローン
 # local.cmakeはzzz_local.cmakeとしてアルファベット順で最後となるようにする．
-# 最後に読み込ませることで，依存関係を解消すrう
+# 最後に読み込ませることで，依存関係を解消する
 ARG CMAKEFILENAME="zzz_local.cmake"
 RUN --mount=type=ssh \
     git clone git@github.com:IRSL-tut/chidori-superbuild.git /workspace/mc-rtc-superbuild/extensions/chidori-superbuild
