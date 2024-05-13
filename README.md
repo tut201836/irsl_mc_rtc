@@ -4,6 +4,7 @@
 ```
 ./build.sh -u <GITLAB name> -e <GITLAB email> -k <GITLAB SSH PUBKEY>
 ./run.sh ./build_controller.sh
+./run.sh ./build_controller.sh # HOTFIX (シンボリックリンクが作られないことがあるため)
 ```
 
 ## run

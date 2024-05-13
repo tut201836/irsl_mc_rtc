@@ -82,6 +82,20 @@ RUN echo "export MC_RTC_WORKSPCE=${MC_RTC_WORKSPCE}" >>  ~/.bashrc && \
     echo 'source /opt/ros/${ROS_DISTRO}/setup.bash' >> ~/.bashrc && \
     echo "source ${MC_RTC_WORKSPCE}/src/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
+# log formatのインストール
+RUN cd / && \
+    git clone https://github.com/IRSL-tut/log_format.git && \
+    cd /log_format && \ 
+    python3 -m pip install -r requirements.txt
+RUN mkdir -p /ros_ws/src && \
+    cd /ros_ws/src && \
+    git clone https://github.com/kindsenior/log_plotter.git && \
+    cd /ros_ws && \
+    bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash && \
+            source ${MC_RTC_WORKSPCE}/src/catkin_ws/devel/setup.bash && \
+            catkin init && catkin build log_plotter" && \
+    echo "source /ros_ws/devel/setup.bash" >> ${HOME}/.bashrc
+
 # BaselineWalkingControllerの必要ライブラリのインストール
 RUN apt update -q -qq && \
     apt install -y ros-noetic-qt-gui ros-noetic-rqt-gui ros-noetic-rqt-gui-py  ros-noetic-rqt-py-common ros-noetic-rqt-service-caller ros-noetic-sbpl && \
