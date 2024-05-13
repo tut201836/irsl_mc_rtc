@@ -95,7 +95,7 @@ RUN mkdir -p /ros_ws/src && \
             source ${MC_RTC_WORKSPCE}/src/catkin_ws/devel/setup.bash && \
             catkin init && catkin build log_plotter" && \
     echo "source /ros_ws/devel/setup.bash" >> ${HOME}/.bashrc
-ENV PYTHONPATH=/mc_rtc_ws/install/lib/python3.8/site-packages:$PYTHONPATH
+ENV PYTHONPATH=${MC_RTC_WORKSPCE}/install/lib/python3.8/site-packages:$PYTHONPATH
 
 # BaselineWalkingControllerの必要ライブラリのインストール
 RUN apt update -q -qq && \
