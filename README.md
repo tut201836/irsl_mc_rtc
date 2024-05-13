@@ -3,8 +3,7 @@
 ## build
 ```
 ./build.sh -u <GITLAB name> -e <GITLAB email> -k <GITLAB SSH PUBKEY>
-./build_controller.sh --init
-./build_controller.sh --build
+./run.sh ./build_controller.sh
 ```
 
 ## run
