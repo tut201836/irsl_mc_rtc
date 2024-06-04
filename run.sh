@@ -12,6 +12,13 @@ else
     echo "$ROBOT is not defined."
     exit
 fi
+
+if [ -e "config/CHIDORI/chidori.yaml" ] && [ $robot = "CHIDORI" ] ; then
+    ROBOT_CONFIG_MOUNT="--mount --volume=`pwd`/config/CHIDORI/chidori.yaml:/mc_rtc_ws/install/lib/mc_controller/BaselineWalkingController/chidori.yaml"
+else 
+    ROBOT_CONFIG_MOUNT=""
+fi 
+
 BWC_WORK_MOUNT="--volume=`pwd`/bwc_ws:/bwc_ws"
 
 .irsl_docker_irsl_system/run.sh \
@@ -19,4 +26,5 @@ BWC_WORK_MOUNT="--volume=`pwd`/bwc_ws:/bwc_ws"
 --name $cname \
 --mount ${MC_CONTROL_CONFIG_MOUNT} \
 --mount ${BWC_WORK_MOUNT} \
+${ROBOT_CONFIG_MOUNT} \
 --workspace "`pwd`/userdir" "$@"
