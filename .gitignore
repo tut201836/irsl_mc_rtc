@@ -1,3 +1,9 @@
 userdir/*
 !userdir/.gitkeep
 tmp
+
+root/*
+!root/.gitkeep
+
+bwc_ws/*
+!bwc_ws/.gitkeep

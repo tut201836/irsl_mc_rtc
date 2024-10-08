@@ -1,0 +1,33 @@
+CoMTask:
+  activeJoints: [
+  "Root",
+  "LLEG_JOINT0", "LLEG_JOINT1", "LLEG_JOINT2", "LLEG_JOINT3", "LLEG_JOINT4", "LLEG_JOINT5", 
+  "RLEG_JOINT0", "RLEG_JOINT1", "RLEG_JOINT2", "RLEG_JOINT3", "RLEG_JOINT4", "RLEG_JOINT5"]
+
+BaseOrientationTask:
+  frame: BODY
+
+FootManager:
+  footstepDuration: 0.9 # [sec]
+  doubleSupportRatio: 0.15 # []
+  impedanceGains:
+    SingleSupport:
+      spring:
+        linear: [2250, 2250, 450] # Weaken Z-component spring to avoid a too fast recovery for mass errors
+
+CentroidalManager:
+  useActualStateForMpc: true
+  enableZmpFeedback: false
+  useTargetPoseForControlRobotAnchorFrame: true
+  useActualComForWrenchDist: false
+  # enableComZFeedback: false
+  dcmGainP: 2.0 # It must be greater than 1 to be stable
+  comZGainP: 20000.0
+  zmpVelGain: 0.02
+  refComZ: 0.7039 # [m]
+  method: PreviewControlZmp
+  horizonDuration: 2.0 # [sec]
+  horizonDt: 0.002 # [sec]
+  # method: IntrinsicallyStableMpc
+  # horizonDuration: 2.0 # [sec]
+  # horizonDt: 0.02 # [sec]
