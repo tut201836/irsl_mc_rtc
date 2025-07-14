@@ -8,7 +8,7 @@ BaseOrientationTask:
   frame: BODY
 
 FootManager:
-  footstepDuration: 0.9 # [sec]
+  footstepDuration: 2.0 # [sec]
   doubleSupportRatio: 0.15 # []
   impedanceGains:
     SingleSupport:
