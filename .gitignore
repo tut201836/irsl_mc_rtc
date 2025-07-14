@@ -3,6 +3,11 @@ tmp
 root/*
 !root/.gitkeep
 
-userdir/chidori_LOG/*
+userdir/chidori_LOG
 
-bwc/build
+bwc_ws/build/
+bwc_ws/devel/
+*.o
+*.so
+*.bin
+*.log
