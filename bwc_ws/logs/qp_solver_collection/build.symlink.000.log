@@ -1,5 +1,0 @@
-Symlinking /bwc_ws/devel/share/qp_solver_collection/cmake/qp_solver_collectionConfig.cmake
-Symlinking /bwc_ws/devel/share/qp_solver_collection/cmake/qp_solver_options.cmake
-Symlinking /bwc_ws/devel/share/qp_solver_collection/cmake/qp_solver_collectionConfig-version.cmake
-Symlinking /bwc_ws/devel/lib/libQpSolverCollection.so
-Symlinking /bwc_ws/devel/lib/pkgconfig/qp_solver_collection.pc

@@ -1,6 +1,0 @@
-Symlinking /bwc_ws/devel/share/force_control_collection/cmake/force_control_collectionConfig.cmake
-Symlinking /bwc_ws/devel/share/force_control_collection/cmake/force_control_collectionConfig-version.cmake
-Symlinking /bwc_ws/devel/lib/libForceColl.so.0.2.0
-Symlinking /bwc_ws/devel/lib/libForceColl.so
-Symlinking /bwc_ws/devel/lib/libForceColl.so.0
-Symlinking /bwc_ws/devel/lib/pkgconfig/force_control_collection.pc

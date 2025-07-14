@@ -3,7 +3,7 @@ tmp
 root/*
 !root/.gitkeep
 
-userdir/chidori_LOG/bins/
+userdir/chidori_LOG/
 userdir/log_format
 userdir/cnoid_spring_customizer/build/
 

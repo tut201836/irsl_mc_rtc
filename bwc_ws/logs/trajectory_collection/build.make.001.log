@@ -1,7 +1,0 @@
-/usr/bin/cmake -S/bwc_ws/src/isri-aist/TrajectoryCollection -B/bwc_ws/build/trajectory_collection --check-build-system CMakeFiles/Makefile.cmake 0
-/usr/bin/cmake -E cmake_progress_start /bwc_ws/build/trajectory_collection/CMakeFiles /bwc_ws/build/trajectory_collection//CMakeFiles/progress.marks
-/usr/bin/make  -f CMakeFiles/Makefile2 all
-make[1]: Entering directory '/bwc_ws/build/trajectory_collection'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/bwc_ws/build/trajectory_collection'
-/usr/bin/cmake -E cmake_progress_start /bwc_ws/build/trajectory_collection/CMakeFiles 0
