@@ -3,7 +3,8 @@ tmp
 root/*
 !root/.gitkeep
 
-userdir/chidori_LOG
+userdir/chidori_LOG/
+userdir/cnoid_spring_customizer/build/
 
 bwc_ws/build/
 bwc_ws/devel/
