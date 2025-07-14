@@ -1,8 +1,0 @@
-prefix=/bwc_ws/install
-
-Name: force_control_collection
-Description: Description of force_control_collection
-Version: 0.2.0
-Cflags: -I${prefix}/include -I/usr/include/eigen3
-Libs: -L${prefix}/lib -lForceColl
-Requires: roscpp qp_solver_collection

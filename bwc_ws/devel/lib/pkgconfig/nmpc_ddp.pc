@@ -1,1 +1,0 @@
-/bwc_ws/devel/.private/nmpc_ddp/lib/pkgconfig/nmpc_ddp.pc

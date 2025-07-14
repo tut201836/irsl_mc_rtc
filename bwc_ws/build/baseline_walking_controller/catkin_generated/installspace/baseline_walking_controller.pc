@@ -1,8 +1,0 @@
-prefix=/bwc_ws/install
-
-Name: baseline_walking_controller
-Description: Description of baseline_walking_controller
-Version: 0.1.0
-Cflags: -I${prefix}/include -I/usr/include/eigen3
-Libs: -L${prefix}/lib -lBaselineWalkingController
-Requires: roscpp geometry_msgs trajectory_collection force_control_collection centroidal_control_collection

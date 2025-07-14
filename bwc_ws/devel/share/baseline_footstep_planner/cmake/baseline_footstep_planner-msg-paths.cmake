@@ -1,1 +1,0 @@
-/bwc_ws/devel/.private/baseline_footstep_planner/share/baseline_footstep_planner/cmake/baseline_footstep_planner-msg-paths.cmake

@@ -1,8 +1,0 @@
-prefix=/bwc_ws/install
-
-Name: centroidal_control_collection
-Description: Description of centroidal_control_collection
-Version: 0.2.0
-Cflags: -I${prefix}/include -I/usr/include/eigen3
-Libs: -L${prefix}/lib -lCCC
-Requires: roscpp qp_solver_collection force_control_collection nmpc_ddp

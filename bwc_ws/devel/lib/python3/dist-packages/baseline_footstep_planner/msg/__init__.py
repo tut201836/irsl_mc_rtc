@@ -1,1 +1,0 @@
-/bwc_ws/devel/.private/baseline_footstep_planner/lib/python3/dist-packages/baseline_footstep_planner/msg/__init__.py

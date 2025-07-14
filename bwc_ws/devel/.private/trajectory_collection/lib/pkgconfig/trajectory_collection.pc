@@ -1,8 +1,0 @@
-prefix=/bwc_ws/devel/.private/trajectory_collection
-
-Name: trajectory_collection
-Description: Description of trajectory_collection
-Version: 0.1.0
-Cflags: -I/bwc_ws/src/isri-aist/TrajectoryCollection/include -I/usr/include/eigen3
-Libs: -L${prefix}/lib 
-Requires: roscpp

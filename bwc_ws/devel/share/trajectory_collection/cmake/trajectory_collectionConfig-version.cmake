@@ -1,1 +1,0 @@
-/bwc_ws/devel/.private/trajectory_collection/share/trajectory_collection/cmake/trajectory_collectionConfig-version.cmake

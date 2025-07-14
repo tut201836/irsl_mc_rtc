@@ -1,1 +1,0 @@
-/bwc_ws/devel/.private/baseline_footstep_planner/share/roseus/ros/baseline_footstep_planner/msg/FootstepSequence2DStamped.l

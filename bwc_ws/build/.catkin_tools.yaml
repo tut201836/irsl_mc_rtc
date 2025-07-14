@@ -1,6 +1,0 @@
-devel_space: /bwc_ws/devel
-install: false
-install_space: /bwc_ws/install
-profile: default
-source_space: /bwc_ws/src
-workspace: /bwc_ws
