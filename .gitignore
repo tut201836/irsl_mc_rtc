@@ -2,3 +2,7 @@ tmp
 
 root/*
 !root/.gitkeep
+
+userdir/chidori_LOG/*
+
+bwc/build
