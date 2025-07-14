@@ -4,7 +4,9 @@ root/*
 !root/.gitkeep
 
 userdir/chidori_LOG/
+userdir/log_format
 userdir/cnoid_spring_customizer/build/
+
 
 bwc_ws/build/
 bwc_ws/devel/
