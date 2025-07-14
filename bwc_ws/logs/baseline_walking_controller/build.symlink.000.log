@@ -1,0 +1,12 @@
+Symlinking /bwc_ws/devel/share/baseline_walking_controller/cmake/baseline_walking_controllerConfig-version.cmake
+Symlinking /bwc_ws/devel/share/baseline_walking_controller/cmake/baseline_walking_controllerConfig.cmake
+Symlinking /bwc_ws/devel/lib/libBaselineWalkingController.so
+Symlinking /bwc_ws/devel/lib/baseline_walking_controller/states/TeleopState.so
+Symlinking /bwc_ws/devel/lib/baseline_walking_controller/states/GuiWalkState.so
+Symlinking /bwc_ws/devel/lib/baseline_walking_controller/states/ConfigWalkState.so
+Symlinking /bwc_ws/devel/lib/baseline_walking_controller/states/InitialState.so
+Symlinking /bwc_ws/devel/lib/baseline_walking_controller/states/RosWalkState.so
+Symlinking /bwc_ws/devel/lib/baseline_walking_controller/states/FootstepPlannerState.so
+Symlinking /bwc_ws/devel/lib/pkgconfig/baseline_walking_controller.pc
+Symlinking /bwc_ws/devel/lib/mc_controller/BaselineWalkingController.so
+Symlinking /bwc_ws/devel/lib/mc_controller/etc/BaselineWalkingController.yaml

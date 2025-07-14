@@ -1,0 +1,15 @@
+/usr/bin/cmake -S/bwc_ws/src/isri-aist/CentroidalControlCollection -B/bwc_ws/build/centroidal_control_collection --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /bwc_ws/build/centroidal_control_collection/CMakeFiles /bwc_ws/build/centroidal_control_collection//CMakeFiles/progress.marks
+/usr/bin/make  -f CMakeFiles/Makefile2 all
+make[1]: Entering directory '/bwc_ws/build/centroidal_control_collection'
+/usr/bin/make  -f src/CMakeFiles/CCC.dir/build.make src/CMakeFiles/CCC.dir/depend
+make[2]: Entering directory '/bwc_ws/build/centroidal_control_collection'
+cd /bwc_ws/build/centroidal_control_collection && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /bwc_ws/src/isri-aist/CentroidalControlCollection /bwc_ws/src/isri-aist/CentroidalControlCollection/src /bwc_ws/build/centroidal_control_collection /bwc_ws/build/centroidal_control_collection/src /bwc_ws/build/centroidal_control_collection/src/CMakeFiles/CCC.dir/DependInfo.cmake "--color="
+make[2]: Leaving directory '/bwc_ws/build/centroidal_control_collection'
+/usr/bin/make  -f src/CMakeFiles/CCC.dir/build.make src/CMakeFiles/CCC.dir/build
+make[2]: Entering directory '/bwc_ws/build/centroidal_control_collection'
+make[2]: Nothing to be done for 'src/CMakeFiles/CCC.dir/build'.
+make[2]: Leaving directory '/bwc_ws/build/centroidal_control_collection'
+[100%] Built target CCC
+make[1]: Leaving directory '/bwc_ws/build/centroidal_control_collection'
+/usr/bin/cmake -E cmake_progress_start /bwc_ws/build/centroidal_control_collection/CMakeFiles 0

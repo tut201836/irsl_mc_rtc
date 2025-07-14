@@ -1,0 +1,1 @@
+/bwc_ws/devel/.private/centroidal_control_collection/share/centroidal_control_collection/cmake/centroidal_control_collectionConfig-version.cmake

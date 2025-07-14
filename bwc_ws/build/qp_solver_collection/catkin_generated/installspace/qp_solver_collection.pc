@@ -1,0 +1,8 @@
+prefix=/bwc_ws/install
+
+Name: qp_solver_collection
+Description: Description of qp_solver_collection
+Version: 0.1.0
+Cflags: -I${prefix}/include -I/usr/include/eigen3
+Libs: -L${prefix}/lib -lQpSolverCollection
+Requires: roscpp

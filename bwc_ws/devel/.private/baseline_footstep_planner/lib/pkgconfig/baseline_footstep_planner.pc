@@ -1,0 +1,8 @@
+prefix=/bwc_ws/devel/.private/baseline_footstep_planner
+
+Name: baseline_footstep_planner
+Description: Description of baseline_footstep_planner
+Version: 0.1.0
+Cflags: -I/bwc_ws/devel/.private/baseline_footstep_planner/include -I/bwc_ws/src/isri-aist/BaselineFootstepPlanner/include -I/opt/ros/noetic/include
+Libs: -L${prefix}/lib -lBaselineFootstepPlanner -lsbpl
+Requires: message_runtime roscpp std_msgs geometry_msgs sensor_msgs

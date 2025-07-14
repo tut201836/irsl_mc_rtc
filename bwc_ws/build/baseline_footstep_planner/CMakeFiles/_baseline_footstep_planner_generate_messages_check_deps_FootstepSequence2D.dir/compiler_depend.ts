@@ -1,0 +1,2 @@
+# CMAKE generated file: DO NOT EDIT!
+# Timestamp file for custom commands dependencies management for _baseline_footstep_planner_generate_messages_check_deps_FootstepSequence2D.

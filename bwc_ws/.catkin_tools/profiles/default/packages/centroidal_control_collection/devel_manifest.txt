@@ -1,0 +1,8 @@
+isri-aist/CentroidalControlCollection
+/bwc_ws/devel/.private/centroidal_control_collection/cmake.lock /bwc_ws/devel/./cmake.lock
+/bwc_ws/devel/.private/centroidal_control_collection/lib/libCCC.so.0 /bwc_ws/devel/lib/libCCC.so.0
+/bwc_ws/devel/.private/centroidal_control_collection/lib/libCCC.so /bwc_ws/devel/lib/libCCC.so
+/bwc_ws/devel/.private/centroidal_control_collection/lib/libCCC.so.0.2.0 /bwc_ws/devel/lib/libCCC.so.0.2.0
+/bwc_ws/devel/.private/centroidal_control_collection/lib/pkgconfig/centroidal_control_collection.pc /bwc_ws/devel/lib/pkgconfig/centroidal_control_collection.pc
+/bwc_ws/devel/.private/centroidal_control_collection/share/centroidal_control_collection/cmake/centroidal_control_collectionConfig-version.cmake /bwc_ws/devel/share/centroidal_control_collection/cmake/centroidal_control_collectionConfig-version.cmake
+/bwc_ws/devel/.private/centroidal_control_collection/share/centroidal_control_collection/cmake/centroidal_control_collectionConfig.cmake /bwc_ws/devel/share/centroidal_control_collection/cmake/centroidal_control_collectionConfig.cmake

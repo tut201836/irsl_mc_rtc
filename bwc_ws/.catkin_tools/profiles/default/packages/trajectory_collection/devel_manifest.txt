@@ -1,0 +1,5 @@
+isri-aist/TrajectoryCollection
+/bwc_ws/devel/.private/trajectory_collection/cmake.lock /bwc_ws/devel/./cmake.lock
+/bwc_ws/devel/.private/trajectory_collection/lib/pkgconfig/trajectory_collection.pc /bwc_ws/devel/lib/pkgconfig/trajectory_collection.pc
+/bwc_ws/devel/.private/trajectory_collection/share/trajectory_collection/cmake/trajectory_collectionConfig-version.cmake /bwc_ws/devel/share/trajectory_collection/cmake/trajectory_collectionConfig-version.cmake
+/bwc_ws/devel/.private/trajectory_collection/share/trajectory_collection/cmake/trajectory_collectionConfig.cmake /bwc_ws/devel/share/trajectory_collection/cmake/trajectory_collectionConfig.cmake

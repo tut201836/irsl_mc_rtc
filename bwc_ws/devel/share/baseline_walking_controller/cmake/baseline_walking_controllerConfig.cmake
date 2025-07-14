@@ -1,0 +1,1 @@
+/bwc_ws/devel/.private/baseline_walking_controller/share/baseline_walking_controller/cmake/baseline_walking_controllerConfig.cmake

@@ -1,0 +1,1 @@
+/bwc_ws/devel/.private/trajectory_collection/lib/pkgconfig/trajectory_collection.pc

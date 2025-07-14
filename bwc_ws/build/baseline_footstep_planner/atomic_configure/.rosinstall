@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /bwc_ws/devel/.private/baseline_footstep_planner/setup.sh

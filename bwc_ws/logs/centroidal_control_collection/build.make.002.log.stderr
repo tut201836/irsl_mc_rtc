@@ -1,0 +1,8 @@
+[01m[K/bwc_ws/src/isri-aist/CentroidalControlCollection/src/IntrinsicallyStableMpc.cpp:[m[K In member function ‘[01m[Kdouble CCC::IntrinsicallyStableMpc1d::procOnce(const std::vector<CCC::IntrinsicallyStableMpc1d::RefData>&, const CCC::IntrinsicallyStableMpc1d::InitialParam&, double, double)[m[K’:
+[01m[K/bwc_ws/src/isri-aist/CentroidalControlCollection/src/IntrinsicallyStableMpc.cpp:103:10:[m[K [01;35m[Kwarning: [m[K‘[01m[K*((void*)& current_zmp_limits +8)[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+  103 |   return [01;35m[Kzmp[m[K;
+      |          [01;35m[K^~~[m[K
+[01m[K/bwc_ws/src/isri-aist/CentroidalControlCollection/src/LinearMpcZmp.cpp:[m[K In member function ‘[01m[Kdouble CCC::LinearMpcZmp1d::procOnce(const std::vector<CCC::LinearMpcZmp1d::RefData>&, const InitialParam&, double, double)[m[K’:
+[01m[K/bwc_ws/src/isri-aist/CentroidalControlCollection/src/LinearMpcZmp.cpp:80:10:[m[K [01;35m[Kwarning: [m[K‘[01m[K*((void*)& current_zmp_limits +8)[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+   80 |   return [01;35m[Kzmp[m[K;
+      |          [01;35m[K^~~[m[K

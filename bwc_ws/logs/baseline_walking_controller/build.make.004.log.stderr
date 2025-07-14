@@ -1,0 +1,16 @@
+[01m[K/bwc_ws/src/isri-aist/BaselineWalkingController/src/CentroidalManager.cpp:[m[K In member function ‘[01m[Kvirtual void BWC::CentroidalManager::update()[m[K’:
+[01m[K/bwc_ws/src/isri-aist/BaselineWalkingController/src/CentroidalManager.cpp:189:69:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kdouble[m[K’
+  189 |       mc_rtc::log::info("[CentroidalManager] Apply ForceZ feedback")
+      |                                                                     [01;31m[K^[m[K
+      |                                                                     [32m[K;[m[K
+  190 |       [32m[Kdouble[m[K footSurfaceZDiff = 0.0;
+      |       [32m[K~~~~~~[m[K                                                         
+[01m[K/bwc_ws/src/isri-aist/BaselineWalkingController/src/CentroidalManager.cpp:201:9:[m[K [01;31m[Kerror: [m[K‘[01m[KfootSurfaceZDiff[m[K’ was not declared in this scope
+  201 |         [01;31m[KfootSurfaceZDiff[m[K = std::abs(leftSurfacePose.translation().z() - rightSurfacePose.translation().z());
+      |         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/bwc_ws/src/isri-aist/BaselineWalkingController/src/CentroidalManager.cpp:206:46:[m[K [01;31m[Kerror: [m[K‘[01m[KfootSurfaceZDiff[m[K’ was not declared in this scope
+  206 |       double plannedComZ_rel = plannedComZ - [01;31m[KfootSurfaceZDiff[m[K;
+      |                                              [01;31m[K^~~~~~~~~~~~~~~~[m[K
+make[2]: *** [src/CMakeFiles/BaselineWalkingController.dir/build.make:149: src/CMakeFiles/BaselineWalkingController.dir/CentroidalManager.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2211: src/CMakeFiles/BaselineWalkingController.dir/all] Error 2
+make: *** [Makefile:149: all] Error 2

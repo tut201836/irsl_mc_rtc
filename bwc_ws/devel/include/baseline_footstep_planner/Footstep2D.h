@@ -1,0 +1,1 @@
+/bwc_ws/devel/.private/baseline_footstep_planner/include/baseline_footstep_planner/Footstep2D.h

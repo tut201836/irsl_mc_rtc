@@ -1,0 +1,5 @@
+isri-aist/NMPC/nmpc_ddp
+/bwc_ws/devel/.private/nmpc_ddp/cmake.lock /bwc_ws/devel/./cmake.lock
+/bwc_ws/devel/.private/nmpc_ddp/lib/pkgconfig/nmpc_ddp.pc /bwc_ws/devel/lib/pkgconfig/nmpc_ddp.pc
+/bwc_ws/devel/.private/nmpc_ddp/share/nmpc_ddp/cmake/nmpc_ddpConfig-version.cmake /bwc_ws/devel/share/nmpc_ddp/cmake/nmpc_ddpConfig-version.cmake
+/bwc_ws/devel/.private/nmpc_ddp/share/nmpc_ddp/cmake/nmpc_ddpConfig.cmake /bwc_ws/devel/share/nmpc_ddp/cmake/nmpc_ddpConfig.cmake

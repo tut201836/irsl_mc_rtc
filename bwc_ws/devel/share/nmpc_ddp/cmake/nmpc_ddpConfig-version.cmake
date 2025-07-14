@@ -1,0 +1,1 @@
+/bwc_ws/devel/.private/nmpc_ddp/share/nmpc_ddp/cmake/nmpc_ddpConfig-version.cmake

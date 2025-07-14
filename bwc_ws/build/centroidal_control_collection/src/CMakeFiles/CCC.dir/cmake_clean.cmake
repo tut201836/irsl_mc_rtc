@@ -1,0 +1,40 @@
+file(REMOVE_RECURSE
+  "/bwc_ws/devel/.private/centroidal_control_collection/lib/.0"
+  "/bwc_ws/devel/.private/centroidal_control_collection/lib/libCCC.pdb"
+  "/bwc_ws/devel/.private/centroidal_control_collection/lib/libCCC.so"
+  "/bwc_ws/devel/.private/centroidal_control_collection/lib/libCCC.so.0"
+  "/bwc_ws/devel/.private/centroidal_control_collection/lib/libCCC.so.0.2.0"
+  "CMakeFiles/CCC.dir/CommonModels.cpp.o"
+  "CMakeFiles/CCC.dir/CommonModels.cpp.o.d"
+  "CMakeFiles/CCC.dir/DcmTracking.cpp.o"
+  "CMakeFiles/CCC.dir/DcmTracking.cpp.o.d"
+  "CMakeFiles/CCC.dir/DdpCentroidal.cpp.o"
+  "CMakeFiles/CCC.dir/DdpCentroidal.cpp.o.d"
+  "CMakeFiles/CCC.dir/DdpSingleRigidBody.cpp.o"
+  "CMakeFiles/CCC.dir/DdpSingleRigidBody.cpp.o.d"
+  "CMakeFiles/CCC.dir/DdpZmp.cpp.o"
+  "CMakeFiles/CCC.dir/DdpZmp.cpp.o.d"
+  "CMakeFiles/CCC.dir/FootGuidedControl.cpp.o"
+  "CMakeFiles/CCC.dir/FootGuidedControl.cpp.o.d"
+  "CMakeFiles/CCC.dir/IntrinsicallyStableMpc.cpp.o"
+  "CMakeFiles/CCC.dir/IntrinsicallyStableMpc.cpp.o.d"
+  "CMakeFiles/CCC.dir/LinearMpcXY.cpp.o"
+  "CMakeFiles/CCC.dir/LinearMpcXY.cpp.o.d"
+  "CMakeFiles/CCC.dir/LinearMpcZ.cpp.o"
+  "CMakeFiles/CCC.dir/LinearMpcZ.cpp.o.d"
+  "CMakeFiles/CCC.dir/LinearMpcZmp.cpp.o"
+  "CMakeFiles/CCC.dir/LinearMpcZmp.cpp.o.d"
+  "CMakeFiles/CCC.dir/PreviewControlCentroidal.cpp.o"
+  "CMakeFiles/CCC.dir/PreviewControlCentroidal.cpp.o.d"
+  "CMakeFiles/CCC.dir/PreviewControlZmp.cpp.o"
+  "CMakeFiles/CCC.dir/PreviewControlZmp.cpp.o.d"
+  "CMakeFiles/CCC.dir/SingularPreviewControlZmp.cpp.o"
+  "CMakeFiles/CCC.dir/SingularPreviewControlZmp.cpp.o.d"
+  "CMakeFiles/CCC.dir/StepMpc.cpp.o"
+  "CMakeFiles/CCC.dir/StepMpc.cpp.o.d"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/CCC.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

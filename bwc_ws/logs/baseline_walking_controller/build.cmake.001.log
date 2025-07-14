@@ -1,0 +1,143 @@
+Not searching for unused variables given on the command line.
+-- Configuring "baseline_walking_controller" (https://github.com/isri-aist/BaselineWalkingController)
+-- Package version (ROS package.xml): 0.1.0
+CMake Warning (dev) at /usr/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake:76 (find_package):
+  Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+  --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+  set the policy and suppress this warning.
+
+Call Stack (most recent call first):
+  /mc_rtc_ws/install/lib/cmake/mc_rtc/mc_rtcConfig.cmake:152 (find_dependency)
+  cmake/package-config.cmake:110 (find_package)
+  CMakeLists.txt:19 (add_project_dependency)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found version "1.71.0") found components: filesystem timer stacktrace_backtrace
+-- Tasks not FOUND.
+CMake Warning (dev) at /usr/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake:76 (find_package):
+  Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+  --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+  set the policy and suppress this warning.
+
+Call Stack (most recent call first):
+  /mc_rtc_ws/install/lib/cmake/RBDyn/RBDynConfig.cmake:148 (find_dependency)
+  /usr/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)
+  /mc_rtc_ws/install/lib/cmake/Tasks/TasksConfig.cmake:147 (find_dependency)
+  /usr/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)
+  /mc_rtc_ws/install/lib/cmake/mc_rtc/mc_rtcConfig.cmake:153 (find_dependency)
+  cmake/package-config.cmake:110 (find_package)
+  CMakeLists.txt:19 (add_project_dependency)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found version "1.71.0") found components: system
+-- sch-core not FOUND.
+CMake Warning (dev) at /usr/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake:76 (find_package):
+  Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+  --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+  set the policy and suppress this warning.
+
+Call Stack (most recent call first):
+  /mc_rtc_ws/install/lib/cmake/sch-core/sch-coreConfig.cmake:144 (find_dependency)
+  /usr/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)
+  /mc_rtc_ws/install/lib/cmake/Tasks/TasksConfig.cmake:148 (find_dependency)
+  /usr/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)
+  /mc_rtc_ws/install/lib/cmake/mc_rtc/mc_rtcConfig.cmake:153 (find_dependency)
+  cmake/package-config.cmake:110 (find_package)
+  CMakeLists.txt:19 (add_project_dependency)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found version "1.71.0") found components: serialization
+CMake Warning (dev) at /usr/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake:76 (find_package):
+  Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+  --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+  set the policy and suppress this warning.
+
+Call Stack (most recent call first):
+  /mc_rtc_ws/install/lib/cmake/Tasks/TasksConfig.cmake:150 (find_dependency)
+  /usr/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)
+  /mc_rtc_ws/install/lib/cmake/mc_rtc/mc_rtcConfig.cmake:153 (find_dependency)
+  cmake/package-config.cmake:110 (find_package)
+  CMakeLists.txt:19 (add_project_dependency)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found version "1.71.0") found components: timer
+-- state-observation FOUND. state-observation at /mc_rtc_ws/install/lib/libstate-observation.so
+-- Default C++ standard: 201703
+-- C++ standard sufficient: Minimal required 11, currently defined: 17
+-- Found GEOS by geos-config: /usr/lib/x86_64-linux-gnu/libgeos.so
+-- Found nanomsg libraries: /usr/lib/x86_64-linux-gnu/libnanomsg.so
+-- Found nanomsg include directories: /usr/include
+-- Checking for module 'roscpp'
+--   Found roscpp, version 1.17.0
+-- Found ROS libraries: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;/usr/lib/x86_64-linux-gnu/libpython3.8.so;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;/usr/lib/x86_64-linux-gnu/liblz4.so;/opt/ros/noetic/lib/libroscpp.so;/usr/lib/x86_64-linux-gnu/libpthread.so;/opt/ros/noetic/lib/librosconsole.so;/opt/ros/noetic/lib/librosconsole_log4cxx.so;/opt/ros/noetic/lib/librosconsole_backend_interface.so;/opt/ros/noetic/lib/libroscpp_serialization.so;/opt/ros/noetic/lib/libxmlrpcpp.so;/opt/ros/noetic/lib/librostime.so;/opt/ros/noetic/lib/libcpp_common.so;/opt/ros/noetic/lib/libtf2_ros.so;/opt/ros/noetic/lib/libactionlib.so;/opt/ros/noetic/lib/libmessage_filters.so;/opt/ros/noetic/lib/libtf2.so;/opt/ros/noetic/lib/librosbag.so;/opt/ros/noetic/lib/librosbag_storage.so;/opt/ros/noetic/lib/libclass_loader.so;/usr/lib/x86_64-linux-gnu/libdl.so;/opt/ros/noetic/lib/libroslib.so;/opt/ros/noetic/lib/librospack.so;/opt/ros/noetic/lib/libroslz4.so;/opt/ros/noetic/lib/libtopic_tools.so
+-- Found ROS include directories: /opt/ros/noetic/include;/usr/include;/mc_rtc_ws/src/catkin_data_ws/devel/include
+-- C++ standard sufficient: Minimal required 11, currently defined: 17
+-- Using CATKIN_DEVEL_PREFIX: /bwc_ws/devel/.private/baseline_walking_controller
+-- Using CMAKE_PREFIX_PATH: /bwc_ws/devel;/ros_ws/devel;/mc_rtc_ws/src/catkin_ws/devel;/mc_rtc_ws/src/catkin_data_ws/devel;/opt/ros/noetic
+-- This workspace overlays: /bwc_ws/devel;/ros_ws/devel;/mc_rtc_ws/src/catkin_ws/devel;/mc_rtc_ws/src/catkin_data_ws/devel;/opt/ros/noetic
+CMake Warning (dev) at /opt/ros/noetic/share/catkin/cmake/python.cmake:4 (find_package):
+  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+  the cmake_policy command to set the policy and suppress this warning.
+
+Call Stack (most recent call first):
+  /opt/ros/noetic/share/catkin/cmake/all.cmake:164 (include)
+  /opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:20 (include)
+  CMakeLists.txt:26 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3")
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using Debian Python package layout
+-- Using empy: /usr/lib/python3/dist-packages/em.py
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /bwc_ws/build/baseline_walking_controller/test_results
+-- Forcing gtest/gmock from source, though one was otherwise available.
+-- Found gtest sources under '/usr/src/googletest': gtests will be built
+-- Found gmock sources under '/usr/src/googletest': gmock will be built
+CMake Deprecation Warning at /usr/src/googletest/CMakeLists.txt:4 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at /usr/src/googletest/googlemock/CMakeLists.txt:45 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at /usr/src/googletest/googletest/CMakeLists.txt:56 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Warning (dev) at /usr/src/googletest/googletest/cmake/internal_utils.cmake:249 (find_package):
+  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+  the cmake_policy command to set the policy and suppress this warning.
+
+Call Stack (most recent call first):
+  /usr/src/googletest/googletest/CMakeLists.txt:91 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10")
+-- Using Python nosetests: /usr/bin/nosetests3
+-- catkin 0.8.10
+-- BUILD_SHARED_LIBS is on
+-- Build FootstepPlannerState as baseline_footstep_planner found
+-- Doxygen rendering: using LaTeX backend
+-- Configuring done (1.0s)
+-- Generating done (0.1s)
+-- Build files have been written to: /bwc_ws/build/baseline_walking_controller

@@ -1,0 +1,1 @@
+/bwc_ws/devel/.private/baseline_walking_controller/lib/pkgconfig/baseline_walking_controller.pc

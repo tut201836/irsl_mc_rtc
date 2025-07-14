@@ -1,0 +1,1 @@
+/bwc_ws/devel/.private/baseline_footstep_planner/share/common-lisp/ros/baseline_footstep_planner/msg/_package_Footstep2D.lisp

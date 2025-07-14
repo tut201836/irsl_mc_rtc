@@ -1,0 +1,1 @@
+/bwc_ws/devel/.private/qp_solver_collection/lib/pkgconfig/qp_solver_collection.pc

@@ -1,0 +1,1 @@
+/bwc_ws/devel/.private/force_control_collection/share/force_control_collection/cmake/force_control_collectionConfig.cmake

@@ -1,0 +1,30 @@
+/usr/bin/cmake -S/bwc_ws/src/isri-aist/BaselineWalkingController -B/bwc_ws/build/baseline_walking_controller --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /bwc_ws/build/baseline_walking_controller/CMakeFiles /bwc_ws/build/baseline_walking_controller//CMakeFiles/progress.marks
+/usr/bin/make  -f CMakeFiles/Makefile2 all
+make[1]: Entering directory '/bwc_ws/build/baseline_walking_controller'
+/usr/bin/make  -f src/CMakeFiles/BaselineWalkingController.dir/build.make src/CMakeFiles/BaselineWalkingController.dir/depend
+make[2]: Entering directory '/bwc_ws/build/baseline_walking_controller'
+cd /bwc_ws/build/baseline_walking_controller && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /bwc_ws/src/isri-aist/BaselineWalkingController /bwc_ws/src/isri-aist/BaselineWalkingController/src /bwc_ws/build/baseline_walking_controller /bwc_ws/build/baseline_walking_controller/src /bwc_ws/build/baseline_walking_controller/src/CMakeFiles/BaselineWalkingController.dir/DependInfo.cmake "--color="
+make[2]: Leaving directory '/bwc_ws/build/baseline_walking_controller'
+/usr/bin/make  -f src/CMakeFiles/BaselineWalkingController.dir/build.make src/CMakeFiles/BaselineWalkingController.dir/build
+make[2]: Entering directory '/bwc_ws/build/baseline_walking_controller'
+[  3%] [32mBuilding CXX object src/CMakeFiles/BaselineWalkingController.dir/CentroidalManager.cpp.o[0m
+cd /bwc_ws/build/baseline_walking_controller/src && /usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_CHRONO_DYN_LINK -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_SERIALIZATION_DYN_LINK -DBOOST_STACKTRACE_BACKTRACE_DYN_LINK -DBOOST_STACKTRACE_USE_BACKTRACE -DBOOST_TIMER_DYN_LINK -DBaselineWalkingController_EXPORTS -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"baseline_walking_controller\" -DSPDLOG_COMPILED_LIB -DUSE_UNSTABLE_GEOS_CPP_API -I/bwc_ws/build/baseline_walking_controller -I/bwc_ws/build/baseline_walking_controller/include -I/bwc_ws/src/isri-aist/BaselineWalkingController/include -I/bwc_ws/src/isri-aist/NMPC/nmpc_ddp/include -I/bwc_ws/src/isri-aist/QpSolverCollection/include -I/bwc_ws/src/isri-aist/ForceControlCollection/include -I/bwc_ws/src/isri-aist/CentroidalControlCollection/include -I/bwc_ws/src/isri-aist/TrajectoryCollection/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /usr/include/eigen3 -isystem /opt/ros/noetic/include -isystem /mc_rtc_ws/install/include -isystem /usr/include/gdk-pixbuf-2.0 -isystem /usr/include/libmount -isystem /usr/include/blkid -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /mc_rtc_ws/install/include/tvm/3rd-party -isystem /mc_rtc_ws/src/catkin_data_ws/devel/include -pedantic -Wno-long-long -Wall -Wextra -Wcast-align -Wcast-qual -Wformat -Wwrite-strings -Wconversion  -O2 -g -DNDEBUG -std=gnu++17 -fPIC -fdiagnostics-color=always -mfpmath=sse -msse2 -pthread -MD -MT src/CMakeFiles/BaselineWalkingController.dir/CentroidalManager.cpp.o -MF CMakeFiles/BaselineWalkingController.dir/CentroidalManager.cpp.o.d -o CMakeFiles/BaselineWalkingController.dir/CentroidalManager.cpp.o -c /bwc_ws/src/isri-aist/BaselineWalkingController/src/CentroidalManager.cpp
+[01m[K/bwc_ws/src/isri-aist/BaselineWalkingController/src/CentroidalManager.cpp:[m[K In member function ‘[01m[Kvirtual void BWC::CentroidalManager::update()[m[K’:
+[01m[K/bwc_ws/src/isri-aist/BaselineWalkingController/src/CentroidalManager.cpp:189:69:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kdouble[m[K’
+  189 |       mc_rtc::log::info("[CentroidalManager] Apply ForceZ feedback")
+      |                                                                     [01;31m[K^[m[K
+      |                                                                     [32m[K;[m[K
+  190 |       [32m[Kdouble[m[K footSurfaceZDiff = 0.0;
+      |       [32m[K~~~~~~[m[K                                                         
+[01m[K/bwc_ws/src/isri-aist/BaselineWalkingController/src/CentroidalManager.cpp:201:9:[m[K [01;31m[Kerror: [m[K‘[01m[KfootSurfaceZDiff[m[K’ was not declared in this scope
+  201 |         [01;31m[KfootSurfaceZDiff[m[K = std::abs(leftSurfacePose.translation().z() - rightSurfacePose.translation().z());
+      |         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/bwc_ws/src/isri-aist/BaselineWalkingController/src/CentroidalManager.cpp:206:46:[m[K [01;31m[Kerror: [m[K‘[01m[KfootSurfaceZDiff[m[K’ was not declared in this scope
+  206 |       double plannedComZ_rel = plannedComZ - [01;31m[KfootSurfaceZDiff[m[K;
+      |                                              [01;31m[K^~~~~~~~~~~~~~~~[m[K
+make[2]: *** [src/CMakeFiles/BaselineWalkingController.dir/build.make:149: src/CMakeFiles/BaselineWalkingController.dir/CentroidalManager.cpp.o] Error 1
+make[2]: Leaving directory '/bwc_ws/build/baseline_walking_controller'
+make[1]: *** [CMakeFiles/Makefile2:2211: src/CMakeFiles/BaselineWalkingController.dir/all] Error 2
+make[1]: Leaving directory '/bwc_ws/build/baseline_walking_controller'
+make: *** [Makefile:149: all] Error 2

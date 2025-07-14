@@ -1,0 +1,27 @@
+<package format="2">
+  <name>centroidal_control_collection</name>
+  <version>0.2.0</version>
+  <description>
+    Collection of centroidal control for legged robots
+  </description>
+  <maintainer email="m-murooka@aist.go.jp">Masaki Murooka</maintainer>
+  <license>BSD</license>
+
+  <url>http://ros.org/wiki/centroidal_control_collection</url>
+  <author>Masaki Murooka</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>qp_solver_collection</depend>
+  <depend>force_control_collection</depend>
+  <depend>nmpc_ddp</depend>
+
+  <build_depend>eigen</build_depend>
+
+  <test_depend>rosunit</test_depend>
+  <test_depend>rostest</test_depend>
+
+  <doc_depend>doxygen</doc_depend>
+  <doc_depend>graphviz</doc_depend>
+</package>

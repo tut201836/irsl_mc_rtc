@@ -1,0 +1,7 @@
+/usr/bin/cmake -S/bwc_ws/src/isri-aist/NMPC/nmpc_ddp -B/bwc_ws/build/nmpc_ddp --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /bwc_ws/build/nmpc_ddp/CMakeFiles /bwc_ws/build/nmpc_ddp//CMakeFiles/progress.marks
+/usr/bin/make  -f CMakeFiles/Makefile2 all
+make[1]: Entering directory '/bwc_ws/build/nmpc_ddp'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/bwc_ws/build/nmpc_ddp'
+/usr/bin/cmake -E cmake_progress_start /bwc_ws/build/nmpc_ddp/CMakeFiles 0

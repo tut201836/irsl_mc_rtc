@@ -1,0 +1,1 @@
+/bwc_ws/devel/.private/qp_solver_collection/share/qp_solver_collection/cmake/qp_solver_collectionConfig.cmake

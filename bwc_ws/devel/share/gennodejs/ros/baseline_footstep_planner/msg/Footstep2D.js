@@ -1,0 +1,1 @@
+/bwc_ws/devel/.private/baseline_footstep_planner/share/gennodejs/ros/baseline_footstep_planner/msg/Footstep2D.js
